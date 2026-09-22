@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "wilwid — What I like & what I don't",
   "short_name": "wilwid",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hides the parts of the web you don't like, using the Jev System One model.",
   "permissions": ["storage", "activeTab"],
   "host_permissions": ["https://api.typesafe.ai/*"],
