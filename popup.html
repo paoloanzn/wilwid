@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>wilwid</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="logo"><span class="wil">wil</span><span class="dot">·</span><span class="wid">wid</span></span>
+        <span class="tagline">what I like, what I don't</span>
+      </div>
+      <label class="switch" title="Turn wilwid on or off everywhere">
+        <input type="checkbox" id="enabled" />
+        <span></span>
+      </label>
+    </header>
+
+    <section class="list like">
+      <h2><span class="face">😍</span> What I like</h2>
+      <p class="hint">Always keep these, even if they touch something I don't like.</p>
+      <div class="tags" data-list="likes">
+        <input placeholder="cats rust jazz…" autocomplete="off" spellcheck="false" />
+      </div>
+    </section>
+
+    <section class="list dislike">
+      <h2><span class="face">🙅</span> What I don't</h2>
+      <p class="hint">Fold these away on every page.</p>
+      <div class="tags" data-list="dislikes">
+        <input placeholder="politics spoilers crypto…" autocomplete="off" spellcheck="false" />
+      </div>
+    </section>
+
+    <section class="page">
+      <div class="stat" id="stat">Looking at this page…</div>
+
+      <label class="row" id="strict-row">
+        <span>
+          <span class="row-title">🎯 Only what I like here</span>
+          <span class="row-hint" id="strict-hint">Hide anything that isn't on my likes list.</span>
+        </span>
+        <span class="switch small"><input type="checkbox" id="strict" /><span></span></span>
+      </label>
+
+      <div class="row">
+        <span class="row-title">Hidden things become</span>
+        <div class="segmented" id="hideStyle">
+          <button data-value="pill">💊 a pill</button>
+          <button data-value="vanish">👻 nothing</button>
+        </div>
+      </div>
+    </section>
+
+    <details id="key-box">
+      <summary>🔑 Jev API key <span id="key-state"></span></summary>
+      <input id="apiKey" type="password" placeholder="Paste your TypeSafe key" autocomplete="off" spellcheck="false" />
+      <p class="hint">Stored on this device only. Get one at <a href="https://console.typesafe.ai/keys" target="_blank">console.typesafe.ai</a>.</p>
+    </details>
+    <p class="error" id="error" hidden></p>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

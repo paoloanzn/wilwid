@@ -1,0 +1,59 @@
+/* wilwid: states live in data-wilwid on each content block. */
+
+[data-wilwid='pending'] {
+  opacity: 0.35 !important;
+  transition: opacity 0.2s ease;
+}
+[data-wilwid='shown'],
+[data-wilwid='revealed'] {
+  transition: opacity 0.2s ease;
+}
+
+/* Vanish: gone without a trace. */
+[data-wilwid='hidden'][data-wilwid-style='vanish'] {
+  display: none !important;
+}
+
+/* Pill: the block folds into a small, clickable "not your thing" tag. */
+[data-wilwid='hidden'][data-wilwid-style='pill'] {
+  font-size: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 4px 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  cursor: pointer !important;
+}
+[data-wilwid='hidden'][data-wilwid-style='pill'] > * {
+  display: none !important;
+}
+[data-wilwid='hidden'][data-wilwid-style='pill']::before {
+  content: '🙈  not your thing · ' attr(data-wilwid-why);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fbe4e4;
+  color: #93312b;
+  font: 500 12px/18px ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+[data-wilwid='hidden'][data-wilwid-style='pill']:hover::before {
+  content: '👀  peek · ' attr(data-wilwid-why);
+  background: #f8d3d3;
+  transform: rotate(-1deg);
+}
+@media (prefers-color-scheme: dark) {
+  [data-wilwid='hidden'][data-wilwid-style='pill']::before {
+    background: #3c2826;
+    color: #f0b3ad;
+  }
+  [data-wilwid='hidden'][data-wilwid-style='pill']:hover::before {
+    background: #4b302d;
+  }
+}
