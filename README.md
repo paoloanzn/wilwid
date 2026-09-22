@@ -5,9 +5,11 @@ The internet has become flooded with huge amount of information, and most of it 
 But now you can stop the slop before it reaches you. 
 
 Just tell Chrome **😍what you like & 🙅what you don't!**
+
 <p align="center">
-<video src="https://github.com/paoloanzn/wilwid/raw/refs/heads/master/wilwid.mp4" width="60%"></video>
+  <a href="wilwid.mp4"><img src="assets/demo.gif" alt="wilwid hiding AI and marketing videos on YouTube in real time" width="80%"></a>
 </p>
+
 This extension reads every page you visit and folds away the parts you
 don't like, using [Jev](https://docs.typesafe.ai/introduction).
 
